@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    interface IProduct
+    public interface IProduct
     {
         string GetTypeOfProduct();
         void Save();

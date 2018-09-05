@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    class GetCarProduct : GetProduct
+    public class Hotel: GetProduct
     {
-        public override IProduct GetProductType()
+        public new IProduct GetProductType(string desc)
         {
-            return new CarProduct();
+            return new HotelProduct();
         }
     }
 }

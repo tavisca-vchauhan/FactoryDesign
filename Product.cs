@@ -11,12 +11,17 @@ namespace Factory
     {
         static void Main(string[] args)
         {
+            GetProduct d = new GetProduct();
+
             Console.WriteLine("Enter the type of product");
             string desc = Console.ReadLine();
-            IProduct prod = GetProduct.GetProductType();
+            desc = desc.ToLower();
+            desc = desc.Substring(0, 1).ToUpper() + desc.Substring(1);
+            IProduct prod = d.GetProductType(desc);
             prod.GetTypeOfProduct();
             prod.Save();
             prod.Book();
+            Console.ReadKey();
         }        
     }
 }
