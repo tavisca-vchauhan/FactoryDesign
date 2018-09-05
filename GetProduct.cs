@@ -20,10 +20,11 @@ namespace Factory
                 Name = temp[1];
                 if(Name==desc)
                 {
-                    Console.Write(System.Reflection.Assembly.GetExecutingAssembly().GetName().Name);
-                    IProduct obj = (IProduct)(Activator.CreateInstance("Factory", Name));
-                    return obj;
-                }
+                    Type type = Type.GetType(name.ToString(), true);
+                    IProduct product = (IProduct)Activator.CreateInstance(type);
+                    string cr = product.GetTypeOfProduct();
+                    return product;
+                }            
             }
             return new WrongProduct();
         }

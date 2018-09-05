@@ -10,6 +10,7 @@ namespace Factory
     {
         public string GetTypeOfProduct()
         {
+            Console.WriteLine("You Entered Wrong Product-Type");
             return "Wrong Product type";
         }
         public void Book()

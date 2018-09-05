@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    public class Hotel: GetProduct
+    class Hotel : GetProduct , IProduct
     {
-        public new IProduct GetProductType(string desc)
+        public string GetTypeOfProduct()
         {
-            return new HotelProduct();
+            return "Hotel";
+        }
+        public void Book()
+        {
+            Console.WriteLine("Booking Hotel");
+        }
+        public void Save()
+        {
+            Console.WriteLine("Saving Hotel details");
         }
     }
 }

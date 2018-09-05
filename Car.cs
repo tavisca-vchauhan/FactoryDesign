@@ -4,13 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Factory
+namespace Factory 
 {
-    public class Car : GetProduct
+    class Car : GetProduct , IProduct
     {
-        public new IProduct GetProductType(string desc)
+        public string GetTypeOfProduct()
         {
-            return new CarProduct();
+            return "car";
+        }
+        public void Book()
+        {
+            Console.WriteLine("Booking Car");
+        }
+        public void Save()
+        {
+            Console.WriteLine("Saving car product");
         }
     }
 }

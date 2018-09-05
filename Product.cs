@@ -13,7 +13,7 @@ namespace Factory
         {
             GetProduct d = new GetProduct();
 
-            Console.WriteLine("Enter the type of product");
+            Console.WriteLine("Enter the type of product [e.g :  'Car' , 'Hotel' , 'Air']");
             string desc = Console.ReadLine();
             desc = desc.ToLower();
             desc = desc.Substring(0, 1).ToUpper() + desc.Substring(1);
