@@ -9,7 +9,7 @@ namespace Factory
     public interface IProduct
     {
         string GetTypeOfProduct(string s);
-        void Save(string s);
-        void Book(string s);
+        void Save(string s,string g);
+        void Book(string s,string g);
     }
 }

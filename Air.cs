@@ -23,25 +23,23 @@ namespace Factory
         {
             fare = air.Discout(fare);
         }
-        public string GetTypeOfProduct(string databaseOperation)
+        public string GetTypeOfProduct(string operationChoice)
         {
             return "air";
         }
-        public void Book(string databaseOperation)
+        public void Book(string operationChoice, string schema)
         {
             log.write("\nBooking Air Product");
-            string data = "TicketNumber: " + ticketNumber + ", DepartureStation: " + departureStation + ",  ArrivalTime : " + arrivalTime + ", DepartureTime : " + departureTime + " , Fare : " + fare+" , Seat : "+seat + " IsBooked :" + IsBooked;
-            data = "\nBooking Air product :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "ticketNumber:" + ticketNumber + ",departureStation:" + departureStation + ",arrivalTime:" + arrivalTime + ",departureTime:" + departureTime + ",fare:" + fare+",seat:"+seat + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Booking Air product");
             IsBooked = true;
         }
-        public void Save(string databaseOperation)
+        public void Save(string operationChoice, string schema)
         {
             log.write("\nSaving Air Product");
-            string data = "TicketNumber: " + ticketNumber + ", DepartureStation: " + departureStation + ",  ArrivalTime : " + arrivalTime + ", DepartureTime : " + departureTime + " , Fare : " + fare + " , Seat : " + seat + " IsBooked :" + IsBooked;
-            data = "\nSaving Air product :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "ticketNumber:" + ticketNumber + ",departureStation:" + departureStation + ",arrivalTime:" + arrivalTime + ",departureTime:" + departureTime + ",fare:" + fare + ",seat:" + seat + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Saving Air product");
         }
     }

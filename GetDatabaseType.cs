@@ -9,7 +9,7 @@ namespace Factory
 {
     class GetDatabaseType
     {
-        public void GetDatabasetype(string data, string databaseOperation)
+        public void GetDatabasetype(string data, string databaseOperation , string schema)
         {
             Logger log = Logger.getInstance();
             Type type1;
@@ -30,7 +30,7 @@ namespace Factory
                     object classObj = constructor.Invoke(new object[] { });
                     MethodInfo method = type1.GetMethod("AddProduct");
                     log.write("\nInvoking "+ databaseOperation);
-                    method.Invoke(classObj, new object[] { data});
+                    method.Invoke(classObj, new object[] { data,schema});
                 }
             }
             if (count == 0)

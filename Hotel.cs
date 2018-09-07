@@ -10,7 +10,7 @@ namespace Factory
     {
         int hotelId = 1;
         string hotelName = "Hyatt";
-        string hotelAddress = "Near Weikfield ,Viman Nagar,Pune,Maharashtra";
+        string hotelAddress = "Near Weikfield Viman-Nagar Pune Maharashtra";
         int fare = 4500;
         int roomsAvailable = 10;
         Boolean IsBooked=false;
@@ -22,25 +22,23 @@ namespace Factory
         {
             fare = hotel.Discout(fare);
         }
-        public string GetTypeOfProduct(string databaseOperation)
+        public string GetTypeOfProduct(string operationChoice)
         {
             return "Hotel";
         }
-        public void Book(string databaseOperation)
+        public void Book(string operationChoice, string schema)
         {
             log.write("\nBooking Hotel Product");
-            string data = "HotelId: " + hotelId + ", HotelName: " + hotelName + ",  HotelAddress : " + hotelAddress + ", Fare: " + fare+" , RoomsAvailable : "+roomsAvailable + " IsBooked :" + IsBooked;
-            data = "\nBooking Hotel :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "hotelId:" + hotelId + ",hotelName:" + hotelName + ",hotelAddress:" + hotelAddress + ",fare:" + fare+",roomsAvailable:"+roomsAvailable + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Booking Hotel");
             IsBooked = true;
         }
-        public void Save(string databaseOperation)
+        public void Save(string operationChoice, string schema)
         {
             log.write("\nSaving Hotel Product");
-            string data = "HotelId: " + hotelId + ", HotelName: " + hotelName + ",  HotelAddress : " + hotelAddress + ", Fare: " + fare + " , RoomsAvailable : " + roomsAvailable + " IsBooked :" + IsBooked;
-            data = "\nSaving Hotel details :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "hotelId:" + hotelId + ",hotelName:" + hotelName + ",hotelAddress:" + hotelAddress + ",fare:" + fare + ",roomsAvailable:" + roomsAvailable + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Saving Hotel details");
         }
     }

@@ -8,6 +8,6 @@ namespace Factory
 {
     interface IDatabase
     {
-        void AddProduct(string s);
+        void AddProduct(string s, string f);
     }
 }

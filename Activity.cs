@@ -21,25 +21,23 @@ namespace Factory
         {
             cost = activity.Discout(cost);
         }
-        public string GetTypeOfProduct(string databaseOperation)
+        public string GetTypeOfProduct(string operationChoice)
         {
             return "activity";
         }
-        public void Book(string databaseOperation)
+        public void Book(string operationChoice , string schema)
         {
             log.write("Booking Activity Product");
-            string data = "ActivityId: " + activityId + ", ActivityName: " + activityName + ",  ActivityDuration : " + activityDuration + ", Cost : " + cost +" IsBooked :"+IsBooked;
-            data = "\nBooking Activity products :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "activityId:" + activityId + ",activityName:" + activityName + ",activityDuration:" + activityDuration + ",cost:" + cost +",IsBooked:"+IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Booking Activity products");
             IsBooked = true;
         }
-        public void Save(string databaseOperation)
+        public void Save(string operationChoice, string schema)
         {
             log.write("Saving Activity Product");
-            string data = "ActivityId: " + activityId + ", ActivityName: " + activityName + ",  ActivityDuration : " + activityDuration + ", Cost : " + cost + " IsBooked :" + IsBooked;
-            data = "\nSaving activity product :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "activityId:" + activityId + ",activityName:" + activityName + ",activityDuration:" + activityDuration + ",cost:" + cost + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Saving activity product");
         }
     }

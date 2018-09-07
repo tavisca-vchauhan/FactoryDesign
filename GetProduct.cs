@@ -32,7 +32,7 @@ namespace Factory
                     object classObj = constructor.Invoke(new object[] { });
                     MethodInfo method = type1.GetMethod(Operation);
                     log.write("\nCreating instance of Product-Type { "+Name+" } class");
-                    method.Invoke(classObj, new object[] {databaseOperation });
+                    method.Invoke(classObj, new object[] {databaseOperation,Name });
                 }
             }
             if(count==0)

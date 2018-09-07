@@ -20,25 +20,23 @@ namespace Factory
         {
             cost =car.Discout(cost);
         }
-        public string GetTypeOfProduct(string databaseOperation)
+        public string GetTypeOfProduct(string operationChoice)
         {
             return "car";
         }
-        public void Book(string databaseOperation)
+        public void Book(string operationChoice, string schema)
         {
             log.write("\nBooking Car Product");
-            string data = "CarId: " + carId + ", \nCarName: " + carName + ", \n CarModel : " + carModel + ", \n Cost: " + cost + " IsBooked :" + IsBooked;
-            data = "\nBooking Car :- " + data;
-            dtype.GetDatabasetype(data,databaseOperation);
+            string value = "carId:" + carId + ",carName:" + carName + ",carModel:" + carModel + ",cost:" + cost + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice , schema);
             Console.WriteLine("Booking Car");
             IsBooked = true;
         }
-        public void Save(string databaseOperation)
+        public void Save(string operationChoice, string schema)
         {
             log.write("\nSaving Car product");
-            string data = "CarId: " + carId + ", \nCarName: " + carName + ", \n CarModel : " + carModel + ", \n Cost: " + cost + " IsBooked :" + IsBooked;
-            data = "\nSaving car product :- " + data;
-            dtype.GetDatabasetype(data, databaseOperation);
+            string value = "carId:" + carId + ",carName:" + carName + ",carModel:" + carModel + ",cost:" + cost + ",IsBooked:" + IsBooked;
+            dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Saving car product");
         }
     }

@@ -8,12 +8,14 @@ namespace Factory
 {
     class File : GetDatabaseType, IDatabase
     {
-        public void AddProduct(string data)
+        Logger log = Logger.getInstance();
+        public void AddProduct(string value , string schema)
         {
             using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(@"C:\FileData.txt", true)) 
             {
-                file.WriteLine(data);
+                log.write("Writing data into File");
+                file.WriteLine(value);
             }
         }
 
