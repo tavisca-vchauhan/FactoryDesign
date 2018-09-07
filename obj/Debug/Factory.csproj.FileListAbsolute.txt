@@ -5,3 +5,10 @@ C:\Users\Vchauhan\source\repos\Factory\obj\Debug\Factory.csprojAssemblyReference
 C:\Users\Vchauhan\source\repos\Factory\obj\Debug\Factory.csproj.CoreCompileInputs.cache
 C:\Users\Vchauhan\source\repos\Factory\obj\Debug\Factory.exe
 C:\Users\Vchauhan\source\repos\Factory\obj\Debug\Factory.pdb
+C:\Users\vchauhan\Desktop\FactoryDesign\obj\Debug\Factory.csprojResolveAssemblyReference.cache
+C:\Users\vchauhan\Desktop\FactoryDesign\obj\Debug\Factory.csproj.CoreCompileInputs.cache
+C:\Users\vchauhan\Desktop\FactoryDesign\obj\Debug\Factory.exe
+C:\Users\vchauhan\Desktop\FactoryDesign\obj\Debug\Factory.pdb
+C:\Users\vchauhan\Desktop\FactoryDesign\bin\Debug\Factory.exe.config
+C:\Users\vchauhan\Desktop\FactoryDesign\bin\Debug\Factory.exe
+C:\Users\vchauhan\Desktop\FactoryDesign\bin\Debug\Factory.pdb

@@ -9,7 +9,7 @@ namespace Factory
     class Car : GetProduct , IProduct
     {
         int carId = 1;
-        string carModel = "2018 model";
+        string carModel = "2018";
         string carName = "BBT";
         int cost = 2505000;
         Boolean IsBooked = false;
@@ -28,9 +28,9 @@ namespace Factory
         {
             log.write("\nBooking Car Product");
             string value = "carId:" + carId + ",carName:" + carName + ",carModel:" + carModel + ",cost:" + cost + ",IsBooked:" + IsBooked;
+            IsBooked = true;
             dtype.GetDatabasetype(value, operationChoice , schema);
             Console.WriteLine("Booking Car");
-            IsBooked = true;
         }
         public void Save(string operationChoice, string schema)
         {

@@ -31,9 +31,9 @@ namespace Factory
         {
             log.write("\nBooking Air Product");
             string value = "ticketNumber:" + ticketNumber + ",departureStation:" + departureStation + ",arrivalTime:" + arrivalTime + ",departureTime:" + departureTime + ",fare:" + fare+",seat:"+seat + ",IsBooked:" + IsBooked;
+            IsBooked = true;
             dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Booking Air product");
-            IsBooked = true;
         }
         public void Save(string operationChoice, string schema)
         {

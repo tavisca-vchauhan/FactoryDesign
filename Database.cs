@@ -18,13 +18,13 @@ namespace Factory
             foreach (string response in storedValue)
             {
                 string[] key = response.Split(':');
-                Console.WriteLine(key[0] + ": " + key[1]);
+                Console.WriteLine(key[0]+" "+key[1]);
                 query += "@" + key[0] + ",";
                 queryData += key[1] + ",";
             }
             int len = query.Length - 1;
             SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source=TAVDESK013;Initial Catalog=Travel;Integrated Security=True";
+            connection.ConnectionString = "Data Source=TAVDESK083;Initial Catalog=Design;User Id=sa;Password=test123!@#";
             query = query.Remove(len, 1);
             string con = "insert into " + schema + " values(" + query + ")";
             connection.Open();

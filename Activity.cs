@@ -29,9 +29,9 @@ namespace Factory
         {
             log.write("Booking Activity Product");
             string value = "activityId:" + activityId + ",activityName:" + activityName + ",activityDuration:" + activityDuration + ",cost:" + cost +",IsBooked:"+IsBooked;
+            IsBooked = true;
             dtype.GetDatabasetype(value, operationChoice, schema);
             Console.WriteLine("Booking Activity products");
-            IsBooked = true;
         }
         public void Save(string operationChoice, string schema)
         {
