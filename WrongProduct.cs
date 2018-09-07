@@ -8,16 +8,16 @@ namespace Factory
 {
     class WrongProduct : IProduct
     {
-        public string GetTypeOfProduct()
+        public string GetTypeOfProduct(string databaseOperation)
         {
             Console.WriteLine("You Entered Wrong Product-Type");
             return "Wrong Product type";
         }
-        public void Book()
+        public void Book(string databaseOperation)
         {
             Console.WriteLine("Nothing to be booked");
         }
-        public void Save()
+        public void Save(string databaseOperation)
         {
             Console.WriteLine("Nothing to be saved");
         }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    public interface IProduct
+    interface IDatabase
     {
-        string GetTypeOfProduct(string s);
-        void Save(string s);
-        void Book(string s);
+        void AddProduct(string s);
     }
 }

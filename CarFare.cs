@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    public interface IProduct
+    class CarFare
     {
-        string GetTypeOfProduct(string s);
-        void Save(string s);
-        void Book(string s);
+        public int Discout(int fare)
+        {
+            fare = fare + (fare*25)/100;
+            return fare;
+        }
     }
 }

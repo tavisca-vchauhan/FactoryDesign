@@ -7,35 +7,33 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
-    public class GetProduct
+    class GetDatabaseType
     {
-        public void GetProductType(string desc , String Operation,string databaseOperation)
+        public void GetDatabasetype(string data, string databaseOperation)
         {
-            IProduct product;
+            Logger log = Logger.getInstance();
             Type type1;
             int count = 0;
-            Logger log = Logger.getInstance();
             System.Type[] types = System.Reflection.Assembly.GetExecutingAssembly().GetTypes();
-            System.Type[] possible = (from System.Type type in types where type.IsSubclassOf(typeof(GetProduct)) select type).ToArray();
-            log.write("\nMoved into GetProduct");
-            foreach(Type name in possible)
+            System.Type[] possible = (from System.Type type in types where type.IsSubclassOf(typeof(GetDatabaseType)) select type).ToArray();
+            foreach (Type name in possible)
             {
                 string Name = name.ToString();
-                string []temp = Name.Split('.');
+                string[] temp = Name.Split('.');
                 Name = temp[1];
-                if (Name == desc)
+                if (Name == databaseOperation)
                 {
                     count++;
                     type1 = Type.GetType(name.ToString(), true);
-                    product = (IProduct)Activator.CreateInstance(type1);
+                    log.write("\nSelecting "+ databaseOperation + " to write data");
                     ConstructorInfo constructor = type1.GetConstructor(Type.EmptyTypes);
                     object classObj = constructor.Invoke(new object[] { });
-                    MethodInfo method = type1.GetMethod(Operation);
-                    log.write("\nCreating instance of Product-Type { "+Name+" } class");
-                    method.Invoke(classObj, new object[] {databaseOperation });
+                    MethodInfo method = type1.GetMethod("AddProduct");
+                    log.write("\nInvoking "+ databaseOperation);
+                    method.Invoke(classObj, new object[] { data});
                 }
             }
-            if(count==0)
+            if (count == 0)
             {
                 Console.WriteLine("You have entered wrong 'product-type' OR 'Operation-type' ");
             }
